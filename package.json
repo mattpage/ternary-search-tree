@@ -1,0 +1,35 @@
+{
+  "name": "ternary-search-tree",
+  "version": "1.0.0",
+  "description": "A ternary search tree for Node.js",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "keywords": [
+    "ternary",
+    "search",
+    "tree",
+    "trie",
+    "tst"
+  ],
+  "author": "Matthew Page",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.0.0",
+    "grunt": "^0.4.5",
+    "grunt-cafe-mocha": "^0.1.13",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-env": "^0.4.4",
+    "grunt-exec": "^0.4.6",
+    "grunt-jsdoc": "^0.6.7",
+    "load-grunt-tasks": "^3.2.0",
+    "lodash": "^3.10.0",
+    "mocha": "^2.2.5",
+    "time-grunt": "^1.2.1",
+    "word-list": "^1.0.0"
+  }
+}
