@@ -18,6 +18,10 @@
   ],
   "author": "Matthew Page",
   "license": "ISC",
+   "repository": {
+    "type": "git",
+    "url": "https://github.com/mattpage/ternary-search-tree.git"
+  },
   "devDependencies": {
     "chai": "^3.0.0",
     "grunt": "^0.4.5",
