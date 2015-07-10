@@ -72,5 +72,13 @@ node = tst.search('chicken');
 console.log(node.data); //null
 ```
 
+## Docs
+
+Generate docs
+
+```shell
+$ grunt docs
+```
+
 ## Resources
 [Ternary Search Trees](http://www.drdobbs.com/database/ternary-search-trees/184410528?pgno=1)
