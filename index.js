@@ -158,6 +158,28 @@ TernarySearchTree.prototype = {
   },
 
   /**
+   * Search the tst and return the set of nodes that match or partially match
+   * @param {String} - the string to search for
+   * @return {Array|null}
+   */
+  partialMatch: function(str){
+    var results = [];
+    var cb = function(node){
+      if (node){
+        if (node.end){
+          results.push(node);
+        }
+        this._traverse(node.mid, cb);
+      }
+    }.bind(this);
+    var node = this.search(str);
+    if (node){
+      cb(node);
+    }
+    return results;
+  },
+
+  /**
    * The number of strings in the tst
    * @returns {Number}
    */

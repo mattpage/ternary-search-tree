@@ -1,6 +1,6 @@
 {
   "name": "ternary-search-tree",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A ternary search tree for Node.js",
   "main": "index.js",
   "directories": {

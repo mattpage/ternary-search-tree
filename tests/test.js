@@ -117,7 +117,30 @@ describe('TernarySearchTree', function () {
       expect(node).to.not.be.null;
       expect(node.data).to.eql(index);
     });
+
+    it('should support partial match searching', function(){
+
+      //console.log('searching for \'banan\'');
+      var results = tst.partialMatch('banan');
+      expect(results.length).to.eq(2);
+      expect(wordArray[results[0].data]).to.eql('banana');
+      expect(wordArray[results[1].data]).to.eql('bananas');
+
+      //console.log('searching for \'abandon\'');
+      var found = [];
+      results = tst.partialMatch('abandon');
+      expect(results.length).to.be.gt(1);
+      _.forEach(results, function(result){
+        //console.log(wordArray[result.data]);
+        found.push(wordArray[result.data]);
+      });
+
+      var expected = [ 'abandon', 'abandoned', 'abandonedly', 'abandonee', 'abandonees', 'abandoner', 'abandoners', 'abandoning', 'abandonment', 'abandonments', 'abandons', 'abandonware', 'abandonwares' ];
+      expect(found).eql(expected);
+    });
+
   });
+
 
   it('should have more tests');
 

@@ -31,7 +31,8 @@ tst.add('to');
 
 console.log(tst.contains('as')); // = true
 console.log(tst.length); // 12
-console.log(tst.search('as')); // { node object }
+console.log(tst.search('as')); // { node }
+console.log(tst.partialMatch('a')); // [{ node(as) },{ node(at) }]
 ```
 
 ## Insertion Order
