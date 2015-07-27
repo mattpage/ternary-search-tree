@@ -29,6 +29,8 @@ tst.add('of');
 tst.add('or');
 tst.add('to');
 
+// equivalent: tst.addMany([ 'as', 'at', 'be', 'by', 'he', 'in', 'is', 'it', 'of', 'on', 'or', 'to' ]);
+
 console.log(tst.contains('as')); // = true
 console.log(tst.length); // 12
 console.log(tst.search('as')); // { node }
@@ -50,6 +52,7 @@ provides the following guidance:
 > The cost of inserting all words in a dictionary with function insert3 is never more than about 10 percent greater than searching for all words.
 > D.D. Sleator and R.E. Tarjan describe theoretical balancing algorithms for ternary search trees in "Self-Adjusting Binary Search Trees" (Journal of the ACM, July 1985).
 
+The `addMany()` function takes an Array of Strings and does exactly this.
 
 ## Associated Data
 

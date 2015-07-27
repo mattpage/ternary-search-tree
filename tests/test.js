@@ -11,9 +11,8 @@ describe('TernarySearchTree', function () {
 
   var tst;
 
-  before(function(done){
+  beforeEach(function(){
     tst = new TernarySearchTree();
-    done();
   });
 
   it('should have the method contains', function(){
@@ -26,6 +25,10 @@ describe('TernarySearchTree', function () {
 
   it('should have the method add', function(){
     expect(tst).to.respondTo('add');
+  });
+
+  it('should have the method addMany', function(){
+    expect(tst).to.respondTo('addMany');
   });
 
   it('should have the method empty', function(){
@@ -52,9 +55,18 @@ describe('TernarySearchTree', function () {
     tst.add('to');
     expect(tst.length).to.eq(12);
     expect(tst.contains('as')).to.be.true;
+    expect(tst.contains('al')).to.be.false;
+  });
+
+  it('should addMany', function(){
+    tst.addMany([ 'to', 'or', 'of', 'on', 'at', 'as', 'he', 'by', 'be', 'it', 'in', 'is' ]);
+    expect(tst.length).to.eq(12);
+    expect(tst.contains('as')).to.be.true;
+    expect(tst.contains('al')).to.be.false;
   });
 
   it('should be traversible', function(){
+    tst.addMany([ 'to', 'or', 'of', 'on', 'at', 'as', 'he', 'by', 'be', 'it', 'in', 'is' ]);
     var nodes = 0;
     tst.traverse(function(/*node*/){
       ++nodes;
@@ -64,7 +76,7 @@ describe('TernarySearchTree', function () {
 
   describe('search and contains', function(){
 
-    before(function(){
+    beforeEach(function(){
       tst.empty();
       expect(tst.length).to.eq(0);
       var len = wordArray.length;

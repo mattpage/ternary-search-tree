@@ -69,6 +69,35 @@ TernarySearchTree.prototype = {
     return node;
   },
 
+  /*
+   * Insert a subarray of strs into node.
+   *
+   * This inserts the middle string, then recurses to insert the left and
+   * right strings.
+   *
+   * @param {Object} node - node to insert into
+   * @param {Array} strs - Entire Array of Strings to insert
+   * @param {Number} begin - First index of strs to insert
+   * @param {Number} end - One past the last index of strs to insert
+   * @param {*} [data] - Arbitrary data to associate with every added string
+   * @return undefined
+   */
+  _insertManyRecurse: function(strs, begin, end, data) {
+    if (end == begin) {
+      return;
+    }
+
+    var mid = Math.floor((begin + end - 1) / 2);
+    this._insert(this.root, strs[mid], data);
+
+    if (mid > begin) {
+      this._insertManyRecurse(strs, begin, mid, data);
+    }
+    if (mid < end - 1) {
+      this._insertManyRecurse(strs, mid + 1, end, data);
+    }
+  },
+
   _search: function(node, str){
     if (!node){
       return null;
@@ -117,6 +146,24 @@ TernarySearchTree.prototype = {
    */
   add: function(str, data){
     this._insert(this.root, str, data);
+  },
+
+  /**
+   * Add an Array of strings to the tst, in a clever order.
+   *
+   * The algorithm:
+   *
+   * 1. Sort the array (extremely fast if the array is already sorted).
+   * 2. Add the median to the TST.
+   * 3. Recursively add the left and right halves of the array.
+   *
+   * @param {Array} strs - strings to add
+   * @param {*} [data] - arbitrary data to associate with every added string
+   * @return undefined
+   */
+  addMany: function(strs, data) {
+    var strs = strs.slice(0).sort();
+    this._insertManyRecurse(strs, 0, strs.length, data);
   },
 
   /**
