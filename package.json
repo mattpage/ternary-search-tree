@@ -1,13 +1,14 @@
 {
   "name": "ternary-search-tree",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A ternary search tree for Node.js",
   "main": "index.js",
   "directories": {
     "test": "tests"
   },
   "scripts": {
-    "test": "grunt test"
+    "test": "./node_modules/mocha/bin/mocha tests/**/*test.js --reporter spec",
+    "docs": "./node_modules/.bin/jsdoc -c jsdoc.json"
   },
   "keywords": [
     "ternary",
@@ -24,17 +25,10 @@
   },
   "devDependencies": {
     "chai": "^3.0.0",
-    "grunt": "^1.0.4",
-    "grunt-cafe-mocha": "^0.1.13",
-    "grunt-cli": "^1.3.2",
-    "grunt-contrib-clean": "^0.6.0",
-    "grunt-env": "^1.0.1",
-    "grunt-exec": "^0.4.6",
-    "grunt-jsdoc": "^2.4.0",
-    "load-grunt-tasks": "^3.2.0",
+    "jsdoc": "^3.6.4",
     "lodash": "^4.17.15",
+    "minimist": "^1.2.5",
     "mocha": "^6.2.0",
-    "time-grunt": "^1.2.1",
     "word-list": "^1.0.0"
   }
 }

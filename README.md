@@ -9,7 +9,7 @@ $ npm install ternary-search-tree --save
 
 ## Test
 ```shell
-$ grunt test
+$ npm test
 ```
 
 ## Usage
@@ -81,7 +81,7 @@ console.log(node.data); //null
 Generate docs
 
 ```shell
-$ grunt docs
+$ npm docs
 ```
 
 ## Resources
