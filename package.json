@@ -1,6 +1,6 @@
 {
   "name": "ternary-search-tree",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A ternary search tree for Node.js",
   "main": "index.js",
   "directories": {
@@ -28,7 +28,7 @@
     "jsdoc": "^3.6.4",
     "lodash": "^4.17.15",
     "minimist": "^1.2.5",
-    "mocha": "^6.2.0",
+    "mocha": "^9.1.3",
     "word-list": "^1.0.0"
   }
 }

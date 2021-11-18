@@ -42,3 +42,6 @@ bower_components
 
 # webstorm
 .idea
+
+# c-tags
+tags
